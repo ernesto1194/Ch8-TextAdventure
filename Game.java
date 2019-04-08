@@ -35,7 +35,7 @@ public class Game
      */
     private void createRooms()
     {
-        Room a, b, c, d, e, f, g,h;
+        Room a, b, c, d, e, f, g, h;
       
         // create the rooms
         a = new Room("In room a");
