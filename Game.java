@@ -1,3 +1,4 @@
+
 /**
  *  This class is the main class of the "World of Zuul" application. 
  *  "World of Zuul" is a very simple, text based adventure game.  Users 
@@ -34,30 +35,43 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside, theater, pub, lab, office;
+        Room a, b, c, d, e, f, g,h;
       
         // create the rooms
-        outside = new Room("outside the main entrance of the university");
-        theater = new Room("in a lecture theater");
-        pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
-        
+        a = new Room("In room a");
+        b = new Room("In room b");
+        c = new Room("In room c");
+        d = new Room("In room d");
+        e = new Room("In room e");
+        f = new Room("In room f");
+        g = new Room("In room g");
+        h = new Room("In room h");
+       
         // initialise room exits
-        outside.setExit("east", theater);
-        outside.setExit("south", lab);
-        outside.setExit("west", pub);
+        b.setExit("west", a);
+        b.setExit("south", d);
+        b.setExit("north", c);
+        
+        a.setExit("south", g);
+        a.setExit("east", b);
+        a.setExit("west", e);
+        
+        c.setExit("south", b);
+        
+        d.setExit("north", b);
+        
+        e.setExit("east", a);
+        
+        g.setExit("south", h);
+        g.setExit("west", f);
+        g.setExit("north", a);
+        
+        h.setExit("north", g);
+        
+        f.setExit("east", g);
 
-        theater.setExit("west", outside);
 
-        pub.setExit("east", outside);
-
-        lab.setExit("north", outside);
-        lab.setExit("east", office);
-
-        office.setExit("west", lab);
-
-        currentRoom = outside;  // start game outside
+        currentRoom = a;  // start game outside
     }
 
     /**
