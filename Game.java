@@ -2,7 +2,7 @@
 
 /**
  *  This class is the main class of the "World of Zuul" application. 
- *  "World of Zuul" is a very simple, text based adventure game.  Users 
+ *  "The Castle" is a very simple, text based adventure game.  Users 
  *  can walk around some scenery. That's all. It should really be extended 
  *  to make it more interesting!
  * 
@@ -71,51 +71,51 @@ public class Game
         a.setExit("east", b);
         a.setExit("west", m);
         
+        b.setExit("north", e);
+        b.setExit("south", d);
+        b.setExit("east", c);
+        b.setExit("west", a);
         
-        b.setExit("south", g);
-        b.setExit("east", b);
-        b.setExit("west", e);
-        
-        c.setExit("south", b);
+        c.setExit("north", f);
+        c.setExit("east", g);
+        c.setExit("west", b);
         
         d.setExit("north", b);
         
-        e.setExit("east", a);
+        e.setExit("south", b);
+        e.setExit("east", f);
         
-        f.setExit("south", h);
-        f.setExit("west", f);
-        f.setExit("north", a);
+        f.setExit("south", c);
+        f.setExit("west", e);
+     
+        g.setExit("west", c);
         
-        g.setExit("north", g);
-        
-        h.setExit("east", g);
+        h.setExit("south", i);
         
         i.setExit("north", k);
+        i.setExit("south", j);
         
-        j.setExit("north", k);
+        j.setExit("north", i);
         
         k.setExit("north", l);
         k.setExit("south", a);
         
         l.setExit("south", k);
         
-        m.setExit("north", k);
+        m.setExit("east", a);
+        m.setExit("west", n);
         
-        n.setExit("north", k);
+        n.setExit("east", m);
+        m.setExit("south", o);
         
-        o.setExit("north", k);
+        o.setExit("north", n);
+        o.setExit("east", p);
         
-        p.setExit("north", k);
+        p.setExit("west", o);
+        p.setExit("south", q);
         
-        k.setExit("north", k);
-        
-        q.setExit("north", k);
-        
-        
-        
-        
-
-
+        q.setExit("Random", g);
+       
         currentRoom = a;  // start game outside
     }
 
@@ -134,7 +134,7 @@ public class Game
             Command command = parser.getCommand();
             finished = processCommand(command);
         }
-        System.out.println("Thank you for playing.  Good bye.");
+        System.out.println("Thank you for playing. Good bye.");
     }
 
     /**
@@ -144,7 +144,7 @@ public class Game
     {
         System.out.println();
         System.out.println("Welcome to the Castle");
-        System.out.println("The Castle is filled with a world of adventure. Make yourself at home");
+        System.out.println("The Castle is filled with a world of adventure!");
         System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
