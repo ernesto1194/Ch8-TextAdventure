@@ -1,4 +1,5 @@
 
+
 /**
  *  This class is the main class of the "World of Zuul" application. 
  *  "World of Zuul" is a very simple, text based adventure game.  Users 
@@ -43,26 +44,37 @@ public class Game
      */
     private void createRooms()
     {
-        Room a, b, c, d, e, f, g, h;
+        Room a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q;
       
         // create the rooms
-        a = new Room("In room a");
-        b = new Room("In room b");
-        c = new Room("In room c");
-        d = new Room("In room d");
-        e = new Room("In room e");
-        f = new Room("In room f");
-        g = new Room("In room g");
-        h = new Room("In room h");
+        a = new Room("In Foyer");
+        b = new Room("In Dinning Room");
+        c = new Room("In Kitchen");
+        d = new Room("In Sun Room");
+        e = new Room("Outside (Patio)");
+        f = new Room("Outside (Patio2)");
+        g = new Room("In Potion Room ");
+        h = new Room("In Bedroom");
+        i = new Room("In Bathroom");
+        j = new Room("In Top Deck");
+        k = new Room("In Tower");
+        l = new Room("In Top Tower");
+        m = new Room("In Courtyard");
+        n = new Room("In Garage");
+        o = new Room("In Garage2");
+        p = new Room("In Basement");
+        q = new Room("Trapped");
        
         // initialise room exits
-        b.setExit("west", a);
-        b.setExit("south", d);
-        b.setExit("north", c);
-        
-        a.setExit("south", g);
+        a.setExit("north", k);
+        a.setExit("south", h);
         a.setExit("east", b);
-        a.setExit("west", e);
+        a.setExit("west", m);
+        
+        
+        b.setExit("south", g);
+        b.setExit("east", b);
+        b.setExit("west", e);
         
         c.setExit("south", b);
         
@@ -70,13 +82,38 @@ public class Game
         
         e.setExit("east", a);
         
-        g.setExit("south", h);
-        g.setExit("west", f);
-        g.setExit("north", a);
+        f.setExit("south", h);
+        f.setExit("west", f);
+        f.setExit("north", a);
         
-        h.setExit("north", g);
+        g.setExit("north", g);
         
-        f.setExit("east", g);
+        h.setExit("east", g);
+        
+        i.setExit("north", k);
+        
+        j.setExit("north", k);
+        
+        k.setExit("north", l);
+        k.setExit("south", a);
+        
+        l.setExit("south", k);
+        
+        m.setExit("north", k);
+        
+        n.setExit("north", k);
+        
+        o.setExit("north", k);
+        
+        p.setExit("north", k);
+        
+        k.setExit("north", k);
+        
+        q.setExit("north", k);
+        
+        
+        
+        
 
 
         currentRoom = a;  // start game outside
@@ -106,8 +143,8 @@ public class Game
     private void printWelcome()
     {
         System.out.println();
-        System.out.println("Welcome to the World of Zuul!");
-        System.out.println("World of Zuul is a new, incredibly boring adventure game.");
+        System.out.println("Welcome to the Castle");
+        System.out.println("The Castle is filled with a world of adventure. Make yourself at home");
         System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
@@ -126,7 +163,7 @@ public class Game
 
         switch (commandWord) {
             case UNKNOWN:
-                System.out.println("I don't know what you mean...");
+                System.out.println("uhh..I don't know what you mean...");
                 break;
 
             case HELP:
@@ -178,7 +215,7 @@ public class Game
         Room nextRoom = currentRoom.getExit(direction);
 
         if (nextRoom == null) {
-            System.out.println("There is no door!");
+            System.out.println("Find Another Way!");
         }
         else {
             currentRoom = nextRoom;
