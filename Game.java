@@ -44,7 +44,7 @@ public class Game
      */
     private void createRooms()
     {
-        Room a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q;
+        Room a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r;
       
         // create the rooms
         a = new Room("In Foyer");
@@ -64,6 +64,8 @@ public class Game
         o = new Room("In Garage2");
         p = new Room("In Basement");
         q = new Room("Trapped");
+        r = new Room("Reset");
+        
        
         // initialise room exits
         a.setExit("north", k);
@@ -91,8 +93,9 @@ public class Game
         g.setExit("west", c);
         
         h.setExit("south", i);
+        h.setExit("north", a);
         
-        i.setExit("north", k);
+        i.setExit("north", h);
         i.setExit("south", j);
         
         j.setExit("north", i);
@@ -106,7 +109,7 @@ public class Game
         m.setExit("west", n);
         
         n.setExit("east", m);
-        m.setExit("south", o);
+        n.setExit("south", o);
         
         o.setExit("north", n);
         o.setExit("east", p);
@@ -114,7 +117,7 @@ public class Game
         p.setExit("west", o);
         p.setExit("south", q);
         
-        q.setExit("Random", g);
+        q.setExit("find out", r);
        
         currentRoom = a;  // start game outside
     }
