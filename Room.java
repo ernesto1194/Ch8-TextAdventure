@@ -73,7 +73,18 @@ public class Room
      */
     public String getLongDescription()
     {
-        return "You are " + description + ".\n" + getExitString();
+        String strDesc = "";
+        strDesc = strDesc + "You are" + description + ".\n";
+        
+        if (itemRoom !=null) {
+            strDesc = strDesc + " There is a " + itemRoom.getName() + " here.\n ";
+        }
+        
+        strDesc = strDesc + getExitString();
+        
+        
+        
+        return strDesc;
     }
 
     /**
