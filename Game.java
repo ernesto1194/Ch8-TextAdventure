@@ -19,8 +19,8 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
-    
-        
+    private Item currentItemInHand;
+  
     /**
      * Create the game and initialise its internal map.
      */
@@ -28,9 +28,10 @@ public class Game
     {
         createRooms();
         parser = new Parser();
+        currentItemInHand = null;
    }
-
-   public static void main(String [] args){
+   
+    public static void main(String [] args){
     Game mygame=new Game ();
     mygame.play ();
    
@@ -116,7 +117,15 @@ public class Game
         p.setExit("south", q);
         
         q.setExit("find out", r);
-       
+        
+        Item potion, flashlight;
+        
+        potion = new Item("Bottle of Potion");
+        flashlight = new Item("Heavy Duty Flashlight");
+        
+        g.setItem(potion);
+        n.setItem(flashlight);
+        
         currentRoom = a;  // start game outside
     }
 
