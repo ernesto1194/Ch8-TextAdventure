@@ -173,6 +173,14 @@ public class Game
             case GO:
                 goRoom(command);
                 break;
+                
+            case SEEK:
+                System.out.println("You are seeking");
+                break;
+                
+            case EAT:
+                System.out.println("You have eaten an apple");
+                break;
 
             case QUIT:
                 wantToQuit = quit(command);
