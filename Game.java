@@ -32,8 +32,7 @@ public class Game
    public static void main(String [] args){
     Game mygame=new Game ();
     mygame.play ();
-    
-    
+   
 }
 
     /**
@@ -164,7 +163,7 @@ public class Game
 
         switch (commandWord) {
             case UNKNOWN:
-                System.out.println("uhh..I don't know what you mean...");
+                System.out.println("..I don't know what you mean...");
                 break;
 
             case HELP:
@@ -192,7 +191,7 @@ public class Game
     private void printHelp() 
     {
         System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
+        System.out.println("around at the castle.");
         System.out.println();
         System.out.println("Your command words are:");
         parser.showCommands();
