@@ -1,5 +1,3 @@
-
-
 /**
  *  This class is the main class of the "World of Zuul" application. 
  *  "The Castle" is a very simple, text based adventure game.  Users 
