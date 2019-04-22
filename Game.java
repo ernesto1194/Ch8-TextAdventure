@@ -46,24 +46,24 @@ public class Game
         Room a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r;
       
         // create the rooms
-        a = new Room("In Foyer");
-        b = new Room("In Dinning Room");
-        c = new Room("In Kitchen");
-        d = new Room("In Sun Room");
-        e = new Room("Outside (Patio)");
-        f = new Room("Outside (Patio2)");
-        g = new Room("In Potion Room ");
-        h = new Room("In Bedroom");
-        i = new Room("In Bathroom");
-        j = new Room("In Top Deck");
-        k = new Room("In Tower");
-        l = new Room("In Top Tower");
-        m = new Room("In Courtyard");
-        n = new Room("In Garage");
-        o = new Room("In Garage2");
-        p = new Room("In Basement");
-        q = new Room("Trapped");
-        r = new Room("Reset");
+        a = new Room(" In Foyer ");
+        b = new Room(" In Dinning Room ");
+        c = new Room(" In Kitchen ");
+        d = new Room(" In Sun Room ");
+        e = new Room(" Outside (Patio) ");
+        f = new Room(" Outside (Patio2) ");
+        g = new Room(" In Potion Room ");
+        h = new Room(" In Bedroom ");
+        i = new Room(" In Bathroom ");
+        j = new Room(" In Top Deck ");
+        k = new Room(" In Tower ");
+        l = new Room(" In Top Tower ");
+        m = new Room(" In Courtyard ");
+        n = new Room(" In Garage ");
+        o = new Room(" In Garage2 ");
+        p = new Room(" In Basement ");
+        q = new Room(" Trapped ");
+        r = new Room(" Reset ");
         
        
         // initialise room exits
@@ -190,6 +190,10 @@ public class Game
                 
             case EAT:
                 System.out.println("You have eaten an apple");
+                break;
+                
+            case TAKE:
+                System.out.println(" pick up this item ");
                 break;
 
             case QUIT:
