@@ -193,8 +193,10 @@ public class Game
                 break;
                 
             case TAKE:
-                System.out.println(" pick up this item ");
+               takeItem ();
                 break;
+                
+             
 
             case QUIT:
                 wantToQuit = quit(command);
@@ -216,10 +218,22 @@ public class Game
         System.out.println("around at the castle.");
         System.out.println();
         System.out.println("Your command words are:");
+        
         parser.showCommands();
     }
-
-    /** 
+    
+    private void takeItem() 
+    {
+    
+            if (currentroom.getItem()==null)
+            System.out.println("there is nothing to take");
+            return;
+    
+        itemInHand=current
+        }
+    
+   
+        /** 
      * Try to go in one direction. If there is an exit, enter the new
      * room, otherwise print an error message.
      */
