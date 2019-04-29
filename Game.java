@@ -20,8 +20,8 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     private Item currentItemInHand;
-  
-    /**
+   
+   /**
      * Create the game and initialise its internal map.
      */
     public Game() 
@@ -196,7 +196,10 @@ public class Game
                takeItem ();
                 break;
                 
-             
+            case BACK:
+                 goRoom(command);
+                 break;
+                
 
             case QUIT:
                 wantToQuit = quit(command);
@@ -225,11 +228,16 @@ public class Game
     private void takeItem() 
     {
     
-            if (currentroom.getItem()==null)
-            System.out.println("there is nothing to take..");
-            return;
-    
-            itemInHand=currentroom;
+            if (currentRoom.getItem()==null)
+            {System.out.println("there is nothing to take..");
+            return;} 
+            
+            Item tempItem;
+            tempItem=currentItemInHand;
+            currentItemInHand=currentRoom.getItem();
+            System.out.println(" You are carrying " + currentItemInHand.getDescription());
+            
+            currentRoom.setItem(tempItem);
         }
     
    
