@@ -20,10 +20,8 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     private Item currentItemInHand;
-    private Room PreviousRoom;
-     
-     
-   
+    private Room PreviousRoom;  
+    
     /**
      * Create the game and initialise its internal map.
      */
@@ -34,11 +32,11 @@ public class Game
         currentItemInHand = null;
    }
    
-    public static void main(String [] args){
+       public static void main(String [] args){
     Game mygame=new Game ();
     mygame.play ();
    
-}
+   }
 
     /**
      *
@@ -130,9 +128,9 @@ public class Game
         n.setItem(flashlight);
         
         currentRoom = a;  // start game outside
-    }
+   }
 
-    /**
+   /**
      *  Main play routine.  Loops until end of play.
      */
     public void play() 
@@ -150,7 +148,7 @@ public class Game
         System.out.println("Thank you for playing. Good bye.");
     }
 
-    /**
+   /**
      * Print out the opening message for the player.
      */
     private void printWelcome()
@@ -189,6 +187,7 @@ public class Game
                 
             case SEEK:
                 System.out.println("You are seeking");
+                System.out.println(currentRoom.getLongDescription());
                 break;
                 
             case EAT:
@@ -202,8 +201,7 @@ public class Game
             case BACK:
                  goBack();
                  break;
-                
-
+              
             case QUIT:
                 wantToQuit = quit(command);
                 break;
@@ -241,8 +239,9 @@ public class Game
         tempRoom=currentRoom; 
         currentRoom=PreviousRoom;
         PreviousRoom=tempRoom;
-        System.out.println(currentRoom.getLongDescription());
+    System.out.println(currentRoom.getLongDescription());
     }
+   
     
     private void takeItem() 
     {
@@ -260,7 +259,7 @@ public class Game
         }
     
    
-       /** 
+     /** 
      * Try to go in one direction. If there is an exit, enter the new
      * room, otherwise print an error message.
      */
@@ -277,17 +276,18 @@ public class Game
         // Try to leave current room.
         Room nextRoom = currentRoom.getExit(direction);
 
-        if (nextRoom == null) {
+        if (nextRoom == null){
             System.out.println("Find Another Way!");
         }
         else {
             PreviousRoom = currentRoom;
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
-        }
+       }
+           
     }
-
-    /** 
+    
+   /** 
      * "Quit" was entered. Check the rest of the command to see
      * whether we really quit the game.
      * @return true, if this command quits the game, false otherwise.
