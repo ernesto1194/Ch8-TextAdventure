@@ -229,11 +229,11 @@ public class Game
             System.out.println("there is nothing to take");
             return;
     
-        itemInHand=current
+            itemInHand=current
         }
     
    
-        /** 
+       /** 
      * Try to go in one direction. If there is an exit, enter the new
      * room, otherwise print an error message.
      */
