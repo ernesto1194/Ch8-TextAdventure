@@ -20,8 +20,11 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     private Item currentItemInHand;
+    private Room PreviousRoom;
+     
+     
    
-   /**
+    /**
      * Create the game and initialise its internal map.
      */
     public Game() 
@@ -197,7 +200,7 @@ public class Game
                 break;
                 
             case BACK:
-                 goRoom(command);
+                 goBack();
                  break;
                 
 
@@ -223,6 +226,22 @@ public class Game
         System.out.println("Your command words are:");
         
         parser.showCommands();
+    }
+    
+    private void goBack()
+    {   
+        Room tempRoom;
+        if (PreviousRoom==null)
+        {
+            System.out.println("no where to go");
+            return;
+           
+        }
+        
+        tempRoom=currentRoom; 
+        currentRoom=PreviousRoom;
+        PreviousRoom=tempRoom;
+        System.out.println(currentRoom.getLongDescription());
     }
     
     private void takeItem() 
@@ -262,6 +281,7 @@ public class Game
             System.out.println("Find Another Way!");
         }
         else {
+            PreviousRoom = currentRoom;
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
         }
