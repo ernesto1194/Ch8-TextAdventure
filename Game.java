@@ -154,7 +154,7 @@ public class Game
     {
         System.out.println();
         System.out.println("Welcome to the Castle");
-        System.out.println("The Castle is filled with a world of adventure!");
+        System.out.println("The Castle is filled with a world of adventures!");
         System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
@@ -173,7 +173,7 @@ public class Game
 
         switch (commandWord) {
             case UNKNOWN:
-                System.out.println("..I don't know what you mean...");
+                System.out.println("I don't know what you mean...");
                 break;
 
             case HELP:
@@ -226,10 +226,10 @@ public class Game
     {
     
             if (currentroom.getItem()==null)
-            System.out.println("there is nothing to take");
+            System.out.println("there is nothing to take..");
             return;
     
-            itemInHand=current
+            itemInHand=currentroom;
         }
     
    
